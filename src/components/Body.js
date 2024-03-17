@@ -1,9 +1,10 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ShimmerCard from "./ShimmerCard";
 import { Link } from "react-router-dom";
 import { BODY_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import userContext from "../utils/userContext";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -11,6 +12,8 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   const RestaurantaCardPromoted = withPromotedLabel(RestaurantCard);
+
+  const { setUserName, loggedInUser } = useContext(userContext);
 
   //fetching data from API
 
@@ -78,6 +81,14 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div>
+          <labe>userName : </labe>
+          <input
+            className="border border-black px-2"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
       </div>
       <div className="flex flex-wrap px-12">
