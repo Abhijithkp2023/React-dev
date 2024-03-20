@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import userContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 
 const Header = () => {
@@ -11,6 +12,7 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   const data = useContext(userContext);
+  const cart = useSelector((store)=>store.cart.items); 
  
   return (
     <div className="header flex justify-between bg-cyan-100 shadow-lg mb-2 h-52">
@@ -23,7 +25,7 @@ const Header = () => {
           <li className="px-4"><Link to="/">Home</Link></li>
           <li className="px-4"><Link to="/about"> About Us</Link></li>
           <li className="px-4"><Link to="/contact">Contact</Link></li>
-          <li className="px-4">Cart</li>
+          <li className="px-4"><Link to="/cart"> Cart ({cart.length} items)</Link> </li>
          
           <button 
             className="bg-gray-100 px-2 mx-2"
