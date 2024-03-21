@@ -6,7 +6,8 @@ const Cart = () => {
   const cartItem = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
   const handleClearCart = () => {
-    dispatch(clearCart);
+    dispatch(clearCart());
+    console.log("hi")
   };
   return (
     <div className="text-center m-4 p-4">

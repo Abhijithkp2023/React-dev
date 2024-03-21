@@ -14,7 +14,7 @@ class About extends React.Component {
   render() {
     console.log("parent render");
     return (
-      <div className="about-container">
+      <div className="text-center p-4 m -4">
         <div>
           <h1>This is about page</h1>
           <h2>We have just started</h2>

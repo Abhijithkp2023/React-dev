@@ -83,7 +83,7 @@ const Body = () => {
           </button>
         </div>
         <div>
-          <labe>userName : </labe>
+          <label>userName : </label>
           <input
             className="border border-black px-2"
             value={loggedInUser}
