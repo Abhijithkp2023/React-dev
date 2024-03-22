@@ -3,6 +3,4 @@ dist
 .parcel-cache
 Tabnine
 coverage
-.parcelrc
-babel.config.js
-jest.config.js
+
